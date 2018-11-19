@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+<!--注册自定义属性编辑器-->
+    <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+        <property name="customEditors">
+            <map>
+                <!--属性编辑器对应得类型和对应得自定义编辑器-->
+                <entry key="com.flexible.editor.editorbean.Car"
+                       value="com.flexible.editor.editorbean.CustomerCarEditor"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="boss" class="com.flexible.editor.editorbean.Boss">
+        <property name="name" value="John"/>
+        <property name="car" value="红旗CA72,200,20000.00"/>
+    </bean>
+
+</beans>

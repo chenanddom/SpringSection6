@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+<!--引入jdbc.properties属性文件
+等效    <context:property-placeholder location="classpath:placeholder/jdbc.properties"></context:property-placeholder>
+-->
+    <context:component-scan base-package="com.flexible.placeholder"></context:component-scan>
+<bean class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer"
+p:location="classpath:placeholder/jdbc.properties"
+      p:fileEncoding="utf-8">
+</bean>
+
+<!---->
+<!--<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"-->
+<!--destroy-method="close"-->
+<!--p:driverClassName="${driverClassName}"-->
+<!--p:url="${url}"-->
+<!--p:username="${userName}"-->
+<!--p:password="${password}"-->
+<!--&gt;</bean>-->
+
+
+</beans>
